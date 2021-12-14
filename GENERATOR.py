@@ -54,8 +54,20 @@ def users_gen():
             log+= letsnanums[random.randint(0,s)]
         log+="'),  "
         c[i]+=log
-    print(*c)
-
+    print('use file for output?(y/n)')
+    bbbbb = input()
+    if bbbbb=='y':
+        print('input file name')
+        cc = input()
+        cc+='.txt'
+        with open(cc,'w') as obj:
+            print('='*20,file=obj)
+            print('created by bd gen',file=obj)
+            print('='*20,file=obj)
+            print(*c,file=obj)
+    else:
+        print(*c)
+            
 def goods_gen():
     names=[['Black','Blue','Gray','Green','Orange','Pink','Purple','Red','White','Yellow','Cyan','Lavander'],
            ['bone china','porcelain','steal','stoneware','melamine','vitrified glass','plastic'],
@@ -70,7 +82,7 @@ def goods_gen():
 def alter_names_gen():
     names = []
     surnames = []
-    with open('names.txt','r') as obj:
+    with open('gen_names.txt','r') as obj:
         b = obj.readline()
         while b:
             
